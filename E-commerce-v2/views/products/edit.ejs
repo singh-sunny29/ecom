@@ -1,0 +1,37 @@
+<%- include("../partials/header")%>
+<%- include("../partials/navbar")%>
+
+<form class="needs-validation" action="/products/<%=product._id%>?_method=PATCH" method="POST" novalidate >
+  <div class="container mt-4" >
+    <div class="mb-3" style="width: 50vw;" >
+      <label for="img" class="form-label">image url</label>
+      <input type="text" class="form-control" id="img" placeholder="url" name="product[img]" value="<%=product.img%>" required>
+      <div class="invalid-feedback">
+        url is required.
+      </div>
+    </div>
+    <div class="mb-3" style="width: 50vw;">
+        <label for="name" class="form-label">Product name</label>
+        <input type="text" class="form-control" id="name" placeholder="Product name" name="product[name]" value="<%=product.name%>" required>
+        <div class="invalid-feedback">
+          You must give a name.
+        </div>
+      </div>
+    <div class="mb-3" style="width: 50vw;">
+      <label for="price" class="form-label">Price</label>
+      <input type="number" class="form-control" id="price" placeholder="Price" name="product[price]" value="<%=product.price%>" required>
+      <div class="invalid-feedback">
+        This field can't be empty.
+      </div>
+    </div>
+    <div class="mb-3" style="width: 50vw;">
+        <label for="desc" class="form-label">Product Description</label>
+        <br>
+        <textarea id="desc" cols="30" rows="5" name="product[desc]" required><%=product.desc%></textarea>
+      </div>
+    <button type="submit" class="btn btn-primary" >Submit</button>
+  </div> 
+</form>
+
+
+<%-include("../partials/footer")%>

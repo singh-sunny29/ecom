@@ -1,0 +1,41 @@
+<%- include("../partials/header")%>
+<%- include("../partials/navbar")%>
+
+<div class="container "  >
+    <div class="row " >
+      <div class="col col-lg-6 col-md-8 lol-sm-18 " id="login-form">
+        <form class="needs-validation " action="/login" method="POST" novalidate>
+          <%- include("../partials/flash")%>
+          <h4 class="display-5 login-head">Login</h4>
+          <br>
+          <div class=" login mb-3"  >
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="username" name="username" required>
+            <div class="invalid-feedback">
+              username is required to verify you
+            </div>
+          </div>
+          
+          <div class=" login mb-3" >
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+            <div class="invalid-feedback">
+              Can't leave this field empty.
+            </div>
+          </div>
+          
+          <div class="login-btn">
+            <button type="submit" class="login btn  btn-primary mb-3" >Login</button>
+          </div>
+          
+      </form>
+      <div class="atag">
+        <a href="/sellerlogin" style="text-decoration: none;" >Seller Login</a>
+      </div>
+
+      </div>
+    </div>
+</div>
+
+
+<%- include("../partials/footer")%>

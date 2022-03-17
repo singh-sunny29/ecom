@@ -1,0 +1,35 @@
+<%- include("../partials/header")%>
+<%- include("../partials/navbar")%>
+
+<div class="container" style="margin-top: 50px;">
+    <form class="needs-validation" action="/register" method="POST" novalidate>
+        <%- include("../partials/flash")%>
+        <h4 class="display-5">SignUp</h4>
+        <div class="mb-3" style="width: 50vw;" >
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" placeholder="username" name="username" required>
+          <div class="invalid-feedback">
+            username is required to verify you
+          </div>
+        </div>
+        <div class="mb-3" style="width: 50vw;">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="email" name="email" required>
+            <div class="invalid-feedback">
+              You must give an email.
+            </div>
+        </div>
+        <div class="mb-3" style="width: 50vw;">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+          <div class="invalid-feedback">
+            Can't leave this field empty.
+          </div>
+        </div>
+        
+        <button type="submit" class="btn btn-success" >SignUp</button>
+    </form>
+</div>
+
+
+<%- include("../partials/footer")%>
