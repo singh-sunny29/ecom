@@ -1,0 +1,32 @@
+<%- include("../partials/header")%>
+<%- include("../partials/navbar")%>
+
+
+<div class="container">
+    <div class="row" >
+        <div class="col col-lg-6">
+            <div class="card m-5 text-center " style="width: 22rem; height:550px;">
+                <img src="<%=product.img%>" class="card-img-top p-1 " style= "height:250px; " >
+                <div class="card-body">
+                  <h5 class="card-title"><%=product.name%></h5>
+                  <h3 class="card-title">Rs.<%=product.price%></h3>
+                  <p class="card-text"><%=product.desc.substring(0,30)%>...</p>
+                  <a href="#" class="btn btn-success">BUY</a>
+                  <a href="/products/<%=product._id%>/edit" class="btn btn-secondary">EDIT</a>
+                <form action="/products/<%=product._id%>?_method=DELETE" method="POST">
+                    <button  class="btn btn-danger m-1">DELETE</button>
+                </form>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col col-lg-6">
+            <h1 style="margin-top: 40px;">Review</h1>
+        </div>
+    </div>
+</div>
+
+
+
+
+<%- include("../partials/footer")%>
